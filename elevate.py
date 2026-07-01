@@ -295,7 +295,7 @@ def _get_service_process_pid(service_name: str) -> int:
                 else:
                     raise RuntimeError(f"{service_name} service failed to start")
 
-            return int(status["ProcessId"])
+            return status["ProcessId"]
         finally:
             win32service.CloseServiceHandle(service_handle)
     finally:
